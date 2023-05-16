@@ -95,6 +95,7 @@ Ahora ya puedes codear toda tu API con Fastapi (main.py).
 
 # Render
 1.- Entrar en render.com y crearse una nueva cuenta de usuario.
+
 2.- Elegir la opción Web Service
 3.- Ir al apartado que se encuentra abajo de Public Git repository. Copiar y pegar el enlace del repositorio que crearon anteriormente (recuerden que sea público).
 4.- Llenar los campos necesarios. En branch seleccionen main. Runtime tiene que ser Python 3.
