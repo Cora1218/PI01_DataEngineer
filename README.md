@@ -158,15 +158,16 @@ Las variables pueden ser reemplazadas en el formato de consulta por el elemento 
 Nota: Para conocer mas detalles técnicos acerca de las funciones y sus respectivos parámetros puede ingresar a https://renderapihenry.onrender.com/docs
 Link de la API en producción.
 
-# Tecnologías utilizadas: 
+# Tecnologías y herramientas utilizadas: 
 * Visual studio code 
 
 * Python 
 
-* Deta cloud 
+* Pandas
 
 * FastApi 
 
-* Uvicorn 
+* Render
 
-* Pandas library 
+* Uvicorn 
+  
