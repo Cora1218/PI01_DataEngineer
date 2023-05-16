@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse # Utilizado para generar el formato de texto de la pagina de inicio 
 import pandas as pd
 import calendar
-import locale
+#import locale
 import json 
 import ast
 import re
@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import linear_kernel
 
 from collections import Counter
 # Establecer el idioma en español
-locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
+#locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 # Creacion de la App
 app = FastAPI(title = "Project Data Engineer", description = "Henry's Data Engineering Project")
