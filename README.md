@@ -121,25 +121,32 @@ Ingrese al siguiente URL: https://renderapihenry.onrender.com
 De acuerdo a la consulta que quiera solicitar, debera agregarle a continuación del URL la consulta y variables con el siguiente formato:
 
 * Consulta 1: .../peliculas_mes/?mes=octubre (En el entorno virtual si funciona porque tengo importado la libreía locale para establecer el idioma Español     locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8') y en render ya no lo acepró a pesar de ponerle la dependencia en requirements.tx).
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_mes/?mes=octubre Se esperaría --> 'Mes: octubre, Cantidad: 4614'
   
 * Consulta 2: .../peliculas_dia/?dia=martes (En el entorno virtual si funciona porque tengo importado la libreía locale para establecer el idioma Español     locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8') y en render ya no lo acepró a pesar de ponerle la dependencia en requirements.tx).
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_dia/?dia=martes Se esperaría --> 'Día: martes, Cantidad: 4640'
   
 * Consulta 3: .../franquicia/?franquicia=Toy%20Story%20Collection
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/franquicia/?franquicia=Toy%20Story%20Collection Se esperaría --> 'Franquicia: Toy Story Collection, Cantidad: 3, Ganancia Total: 343554033.0, Ganancia Promedio: 373554032.0'
   
 * Consulta 4: .../peliculas_pais/?pais=United%20States%20of%20America
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_pais/?pais=United%20States%20of%20America Se esperaría --> 'pais: United States of America, cantidad:45372'
   
 * Consulta 5: .../productoras/?productora=Warner Bros.
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/productoras/?productora=Warner%20Bros. Se esperaría --> {'productora': 'Warner Bros.', 'ganancia_total': 317932254772.0, 'cantidad': 33573}
 
 * Consulta 6: .../retorno/?pelicula=Toy%20Story
+
   Ejemplo de búsqueda: https://renderapihenry.onrender.com/retorno/?pelicula=Toy%20Story Se esperaría --> {"pelicula":"Toy Story","inversion":30000000.0,"ganancia":343554033.0,"retorno":11.4518011,"anio":1995}
 
-* consulta 7: .../recomendacion/?titulo=Toy%20Story del sistema de recomendación (En entorno virtual si funciona)
-  Ejemplo: Se esperaría --> {'lista recomendada': ['Toy Story 2', 'The Champ', 'Rebel Without a Cause', 'Man on the Moon','Malice']}
+* consulta 7: .../recomendacion/?titulo=Toy%20Story del sistema de recomendación (En entorno virtual si funciona en Render no :( ).
+
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/recomendacion/?titulo=Toy%20Story Se esperaría --> {'lista recomendada': ['Toy Story 2', 'The Champ', 'Rebel Without a Cause', 'Man on the Moon','Malice']}
 Las variables pueden ser reemplazadas en el formato de consulta por el elemento deseado:
 
 * mes: Puede ser cualquier mes del año (enero, febrero...diciembre). (En entorno virtual si funciona por el import de locale para el idioma español en        Render no me lo permitió).
