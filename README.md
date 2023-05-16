@@ -9,7 +9,7 @@ para ésto debe realizar las transformaciones requeridas y posteriormente ponga 
 
 * Rol del desarrollador:
 Data Engineer.
-# Proceso de "ETL" (Extract, transform, load) en VisualStudioCode - Python:
+# Proceso de "ETL" (Extract, Transform, Load) en VisualStudioCode - Python:
 # EXTRACCIÓN DE DATOS
 * Importación de la librería pandas para el manejo de dataframes.
 * Ingesta de datos (movies_dataset.csv provistos por el cliente).
