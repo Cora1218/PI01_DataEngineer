@@ -8,11 +8,11 @@ El área de análisis de datos solicita al de Data engineering que relaice un si
 para ésto debe realizar las transformaciones requeridas y posteriormente ponga a disposición los datos mediante la elaboración y ejecución de una API.
 
 * Rol del desarrollador:
-Data engineer.
+Data Engineer.
 # Proceso de "ETL" (Extract, transform, load) en VisualStudioCode - Python:
 # EXTRACCIÓN DE DATOS
 * Importación de la librería pandas para el manejo de dataframes.
-* Ingesta de datos (Archivo .csv provistos por el cliente).
+* Ingesta de datos (Archivo.csv provistos por el cliente).
 * Análisis exploratorio para conocer sus características principales.
 
 # TRANSFORMACIONES
@@ -49,48 +49,97 @@ Nota: El desarrolo de las consultas se encuentra alojado en el archivo funciones
 * Importación de las librerías a utilizar.
 * Declaración de la creación de la API.
 * Declaración de la ruta de acceso para la base de datos a utilizar.
-* Creación de un directorio índex con mensaje de bienvenida a la interfaz
+* Creación de un directorio índex con mensaje de bienvenida a la interfaz.
 * Desarrollo de las consultas con formato:
   
   @app.get("/tipo_de_consulta/")
   def tipo_de_consulta(variable1:tipo_de_dato, variable"n":...):
   desarrollo_de_la_funcion.
-* Creacion de una cuenta en Deta.
-* Instalacion del Deta CLI en consola de forma local mediante comando "iwr https://get.deta.dev/cli.ps1 -useb | iex"
-* Comprobación de la correcta instalacion con "deta --help"
-* Login en deta a través de la consola mediante comando "deta login"
-* Ubicado en el path de la carpeta donde se encuentra la API desarrollada se procede a la creacion de un micro mediante el comando "deta new"
+  
+# Creación de un entorno virtual
+* python -m venv venv: Para instalar dependencias y librerías.
 * Una vez creado el micro, se realizan las pruebas correspondientes a las consultas con el endpoint URL provisto por deta.
+# Crear archivos necesarios (desde Gitbash)
+* touch .gitignore
+* touch main.py
+* touch requirements.txt
+# venv + .gitignore
+* Poner '/venv' dentro del archivo .gitignore
 
-# Instrucciones para la utilización de la herramienta:
-Ingrese al siguiente URL: https://fastapideta1-1-y1445592.deta.app
+# FastApi y Render
+Desde la terminal de VSCode, realizar los siguientes pasos:
+* git init
+* pip install uvicorn
+* pip install fastapi
+
+# Pip freeze
+* pip freeze > requirements.txt (Solo las necesarias).
+  - Si luego se necesita instalar otra librería más, se vuelve a ejecutar este comando.
+
+Ahora ya puedes codear toda tu API con Fastapi (main.py).
+
+# Creación repo Github
+* Crear un nuevo repo en Github (Dejarlo en modo público).
+ - Comunicarnos desde el repositorio local con Github.
+* git config user.name y git config user.email vamos a introducir
+  nuestros datos para poder conectarnos con el repositorio remoto.
+* Para comunicar los archivos locales con la repo remota usamos git remote
+  add origin y entre comillas, la url de nuestro repo.
+* Desde una terminal en VSC poner: git add . (añadimos todos los
+  archivos que tienen cambios.)
+* git commit -m y el nombre del commit entre comillas.
+* Con git push -u origin master vamos a hacer la conexión con Github.
+  Master o main son la rama principal con la que vamos a trabajar. Origin es
+  el nombre por convención que le ponemos a nuestro repositorio.
+¡Ahora otros usuarios van a poder ver nuestro repo!
+
+# Render
+1.- Entrar en render.com y crearse una nueva cuenta de usuario.
+2.- Elegir la opción Web Service
+3.- Ir al apartado que se encuentra abajo de Public Git repository. Copiar y pegar el enlace del repositorio que crearon anteriormente (recuerden que sea público).
+4.- Llenar los campos necesarios. En branch seleccionen main. Runtime tiene que ser Python 3.
+5.- El resto de los campos se deben llenar con la misma información que en la imagen: 
+![image](https://github.com/Cora1218/PI01_DataEngineer/assets/105570983/66d8082e-c091-4dcd-b128-c4b4dbd68076)
+6.- Seleccionar la opción Create Web Service.
+7.- Una vez terminados los pasos anteriores, se va a comenzar a cargar nuestra aplicación. Puede tardar unos minutos.
+8.- Entrar al enlace de arriba a la izquierda.
+9.- Nos va a direccionar a nuestra API. Si les aparece un "Not found", agregar un /docs a su enlace.
+¡Con todos esos pasos, la API que crearon ya está lista para poder ser consumida!
+
+# Instrucciones para la utilización de la Api:
+Ingrese al siguiente URL: https://renderapihenry.onrender.com
 
 De acuerdo a la consulta que quiera solicitar, debera agregarle a continuación del URL la consulta y variables con el siguiente formato:
 
-* Consulta 1: .../peliculas_mes/?mes=octubre
-* Consulta 2: .../peliculas_dia/?dia=martes
+* Consulta 1: .../peliculas_mes/?mes=octubre (En el entorno virtual si funciona porque tengo importado la libreía locale para establecer el idioma Español     locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8') y en render ya no lo acepró a pesar de ponerle la dependencia en requirements.tx).
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_mes/?mes=octubre Se esperaría --> 'Mes: octubre, Cantidad: 4614'
+  
+* Consulta 2: .../peliculas_dia/?dia=martes (En el entorno virtual si funciona porque tengo importado la libreía locale para establecer el idioma Español     locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8') y en render ya no lo acepró a pesar de ponerle la dependencia en requirements.tx).
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_dia/?dia=martes Se esperaría --> 'Día: martes, Cantidad: 4640'
+  
 * Consulta 3: .../franquicia/?franquicia=Toy%20Story%20Collection
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/franquicia/?franquicia=Toy%20Story%20Collection Se esperaría --> 'Franquicia: Toy Story Collection, Cantidad: 3, Ganancia Total: 343554033.0, Ganancia Promedio: 373554032.0'
+  
 * Consulta 4: .../peliculas_pais/?pais=United%20States%20of%20America
-* Consulta 5: .../
-* Consulta 6: .../retorno/?pelicula=Toy%20Story
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/peliculas_pais/?pais=United%20States%20of%20America Se esperaría --> 'pais: United States of America, cantidad:45372'
+  
+* Consulta 5: .../productoras/?productora=Warner Bros.
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/productoras/?productora=Warner%20Bros. Se esperaría --> {'productora': 'Warner Bros.', 'ganancia_total': 317932254772.0, 'cantidad': 33573}
 
+* Consulta 6: .../retorno/?pelicula=Toy%20Story
+  Ejemplo de búsqueda: https://renderapihenry.onrender.com/retorno/?pelicula=Toy%20Story Se esperaría --> {"pelicula":"Toy Story","inversion":30000000.0,"ganancia":343554033.0,"retorno":11.4518011,"anio":1995}
+
+* consulta 7: .../recomendacion/?titulo=Toy%20Story del sistema de recomendación (En entorno virtual si funciona)
+  Ejemplo: Se esperaría --> {'lista recomendada': ['Toy Story 2', 'The Champ', 'Rebel Without a Cause', 'Man on the Moon','Malice']}
 Las variables pueden ser reemplazadas en el formato de consulta por el elemento deseado:
 
-* mes: Puede ser cualquier mes del año (enero, febrero...diciembre).
-* dia: Puede ser reemplazado por cualquier día de la semana (lunes, martes...domingo).
+* mes: Puede ser cualquier mes del año (enero, febrero...diciembre). (En entorno virtual si funciona por el import de locale para el idioma español en        Render no me lo permitió).
+* dia: Puede ser reemplazado por cualquier día de la semana (lunes, martes...domingo). (En entorno virtual si funciona por el import de locale para el     idioma español en Render no me lo permitió).
 * franquicia: Cualquier nombre de franquicia o colección a la que pertenece la película (Toy Story Collection, Grumpy Old Men Collection, Father of the Bride Collection, etc.). 
 * pais: País donde se produjo la película (United States of America, United Kingdom, etc.).
 * pelicula: Título de alguna película (Toy Story, Jumanji, Balto, etc).
 
-# Ejemplos de búsquedas:
-* Consulta 1: https://fastapideta1-1-y1445592.deta.app/peliculas_mes/?mes=octubre
-* Consulta 2: https://fastapideta1-1-y1445592.deta.app/peliculas_dia/?dia=martes
-* Consulta 3: https://fastapideta1-1-y1445592.deta.app/franquicia/?franquicia=Toy%20Story%20Collection
-* Consulta 4: https://fastapideta1-1-y1445592.deta.app/peliculas_pais/?pais=United%20States%20of%20America
-* Consulta 5:
-* Consulta 6: https://fastapideta1-1-y1445592.deta.app/retorno/?pelicula=Toy%20Story
-
-Nota: Para conocer mas detalles técnicos acerca de las funciones y sus respectivos parámetros puede ingresar a https://fastapideta1-1-y1445592.deta.app/docs
+Nota: Para conocer mas detalles técnicos acerca de las funciones y sus respectivos parámetros puede ingresar a https://renderapihenry.onrender.com/docs
 Link de la API en producción.
 
 # Tecnologías utilizadas: 
