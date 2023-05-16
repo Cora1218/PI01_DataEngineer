@@ -47,7 +47,7 @@ ML
 
 Nota: El desarrolo de las consultas se encuentra alojado en el archivo funcionesApi.ipynb.
 
-# Proceso para el desarrollo de la API, utilizando FastAPI (framework que permite construir APIs con Python) y Deta para realizar el deploy:
+# Proceso para el desarrollo de la API, utilizando FastAPI (framework que permite construir APIs con Python) y Render para realizar el deploy:
 * Generación de archivo main.py (donde desarrollar el script) y otro requirements.txt (donde alojar los requerimientos para la API).
 * Importación de las librerías a utilizar.
 * Declaración de la creación de la API.
