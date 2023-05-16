@@ -4,7 +4,7 @@
 # PROYECTO INDIVIDUAL N°1 - DATA ENGINEER (Henry´s bootcamp)
 # Desarrollado por María Guadalupe Martínez Jiménez 
 * Problemática: 
-El área de análisis de datos solicita al de Data engineering que relaice un sistema de recomendación de películas, utilizando un grupo de datasets provistos, 
+El área de análisis de datos solicita al de Data engineering que realice consultas para un sistema de recomendación de películas, utilizando un dataset provisto, 
 para ésto debe realizar las transformaciones requeridas y posteriormente ponga a disposición los datos mediante la elaboración y ejecución de una API.
 
 * Rol del desarrollador:
@@ -12,7 +12,7 @@ Data Engineer.
 # Proceso de "ETL" (Extract, transform, load) en VisualStudioCode - Python:
 # EXTRACCIÓN DE DATOS
 * Importación de la librería pandas para el manejo de dataframes.
-* Ingesta de datos (Archivo.csv provistos por el cliente).
+* Ingesta de datos (movies_dataset.csv provistos por el cliente).
 * Análisis exploratorio para conocer sus características principales.
 
 # TRANSFORMACIONES
@@ -41,6 +41,9 @@ Nota: La extracción de datos así como las respectivas transformaciones pueden 
 * def productoras(productora): '''Ingresas la productora, retornando la ganancia total y la cantidad de peliculas que produjeron''' return {'productora':productora, 'ganancia_total':respuesta, 'cantidad':respuesta}
 
 * def retorno(pelicula): '''Ingresas la pelicula, retornando la inversion, la ganancia, el retorno y el año en el que se lanzo''' return {'pelicula':pelicula, 'inversion':respuesta, 'ganacia':respuesta,'retorno':respuesta, 'anio':respuesta}
+
+ML
+* def recomendacion(titulo): '''Toma como parámetro el título de una película y retorna una lista de 5 películas recomendadas de acuerdo al título'''
 
 Nota: El desarrolo de las consultas se encuentra alojado en el archivo funcionesApi.ipynb.
 
